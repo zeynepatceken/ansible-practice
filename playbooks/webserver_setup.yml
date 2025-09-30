@@ -1,0 +1,30 @@
+- name: Simple Web Server Setup
+  hosts: webservers
+  become: yes
+
+  tasks:
+    - name: Update package list
+      apt:
+        update_cache: yes
+
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Create index.html
+      copy:
+        dest: /var/www/html/index.html
+        content: |
+          <!DOCTYPE html>
+          <html>
+          <head><title>Hello Ansible</title></head>
+          <body><h1>Welcome to Ansible Practice!</h1></body>
+          </html>
+        mode: '0644'
+
+    - name: Start Nginx service
+      service:
+        name: nginx
+        state: started
+        enabled: yes

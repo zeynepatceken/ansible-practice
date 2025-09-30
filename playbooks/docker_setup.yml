@@ -1,0 +1,28 @@
+- name: Docker Installation and Simple Container Run
+  hosts: webservers
+  become: yes
+
+  tasks:
+    - name: Update package list
+      apt:
+        update_cache: yes
+
+    - name: Install Docker
+      apt:
+        name:
+          - docker.io
+        state: present
+
+    - name: Start Docker service
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Run simple Nginx container
+      docker_container:
+        name: nginx_container
+        image: nginx
+        state: started
+        ports:
+          - "8080:80"

@@ -1,0 +1,28 @@
+- name: User Setup
+  hosts: all
+  become: yes
+
+  vars:
+    new_user: devuser
+
+  tasks:
+    - name: Create a new user
+      user:
+        name: "{{ new_user }}"
+        state: present
+        groups: sudo
+        shell: /bin/bash
+        create_home: yes
+
+    - name: Add authorized key for the new user
+      authorized_key:
+        user: "{{ new_user }}"
+        state: present
+        key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+
+    - name: Ensure sudo group has no password requirement
+      lineinfile:
+        path: /etc/sudoers
+        state: present
+        regexp: '^%sudo'
+        line: '%sudo ALL=(ALL) NOPASSWD:ALL'

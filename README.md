@@ -40,7 +40,7 @@ Installs Docker, starts the Docker service, and runs a basic Nginx container.
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/ansible-practice.git
+git clone https://github.com/zeynepatceken/ansible-practice.git
 cd ansible-practice
 ```
 

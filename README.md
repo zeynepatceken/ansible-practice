@@ -12,6 +12,8 @@ ansible-practice/
 │   └── hosts.ini
 ├── playbooks/
 │   ├── webserver_setup.yml
+│   ├── firewall_setup.yml
+│   ├── users_setup.yml
 │   ├── update_packages.yml
 │   └── docker_setup.yml
 └── README.md

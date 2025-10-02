@@ -15,7 +15,8 @@ ansible-practice/
 │   ├── update_packages.yml 
 │   ├── docker_setup.yml 
 │   ├── firewall_setup.yml
-│   └── users_setup.yml
+│   ├── users_setup.yml
+│   └── package_loop.yml
 └── README.md
 ```
 
@@ -47,6 +48,13 @@ ansible-practice/
    - Creates a new user with sudo privileges  
    - Sets up SSH key authentication  
    - Ensures secure user access  
+
+6. **package_loop.yml** 
+   Installs multiple common packages using a loop:
+   -Updates package cache
+   -Iterates through a list of packages
+   -Installs each package (like git, curl, vim, htop)
+
 
 ---
 

@@ -75,6 +75,11 @@ ansible-playbook playbooks/webserver_setup.yml
 
 Replace the playbook name with the one you want to execute.
 
+```bash
+ansible-playbook -i localhost, -c local <playbook-name>.yml
+```
+(This command runs the playbook locally on your own machine without SSH. Useful for testing.)
+
 ---
 
 ## Requirements

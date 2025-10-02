@@ -51,9 +51,9 @@ ansible-practice/
 
 6. **package_loop.yml** 
    Installs multiple common packages using a loop:
-   -Updates package cache
-   -Iterates through a list of packages
-   -Installs each package (like git, curl, vim, htop)
+   - Updates package cache
+   - Iterates through a list of packages
+   - Installs each package (like git, curl, vim, htop)
 
 
 ---
